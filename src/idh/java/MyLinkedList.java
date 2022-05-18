@@ -18,11 +18,7 @@ public class MyLinkedList<T> implements List<T> {
 	
 	@Override
 	public int size() {
-		// TODO Implement!
-		int i = 0;
-		for (T x : this)
-			i++;
-		return i;
+		return prefirst.size() - 1;
 	}
 
 	@Override
@@ -315,6 +311,12 @@ public class MyLinkedList<T> implements List<T> {
 		
 		ListElement(T value) {
 			this.value = value;
+		}
+		
+		public int size() {
+			if (next == null)
+				return 1;
+			return next.size() + 1;
 		}
 	}
 	
